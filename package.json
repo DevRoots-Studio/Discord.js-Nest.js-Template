@@ -13,7 +13,7 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "commandkit": "^0.1.10",
+    "commandkit": "github:AboMeezO/DevRoots-Commandkit",
     "discord.js": "^14.24.0",
     "path": "^0.12.7",
     "sequelize": "^6.37.7",
