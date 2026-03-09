@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "build": "nest build",
-    "start": "node dist/main",
+    "start": "node dist/api/main.js",
     "dev": "nest start --watch",
-    "start:prod": "node dist/main"
+    "start:prod": "node dist/api/main.js"
   },
   "dependencies": {
     "@repo/database": "*",

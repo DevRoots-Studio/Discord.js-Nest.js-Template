@@ -6,7 +6,7 @@
     "strict": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "outDir": "./dist",
+    "outDir": "../../dist/bot",
     "rootDir": "./src",
     "declaration": true,
     "resolveJsonModule": true

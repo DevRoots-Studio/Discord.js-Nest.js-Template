@@ -19,7 +19,7 @@ RUN npm run build:bot
 FROM base AS runner
 ENV NODE_ENV=production
 COPY --from=deps /app/node_modules ./node_modules
-COPY --from=builder /app/apps/discord-bot/dist ./apps/discord-bot/dist
+COPY --from=builder /app/dist/bot ./dist/bot
 COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
 COPY --from=builder /app/packages/database ./packages/database
 COPY package.json package-lock.json* ./
@@ -28,4 +28,4 @@ COPY packages/database/package.json packages/database/
 
 WORKDIR /app
 EXPOSE 3100
-CMD ["node", "apps/discord-bot/dist/main.js"]
+CMD ["node", "dist/bot/main.js"]

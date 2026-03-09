@@ -35,6 +35,11 @@ Monorepo with a **Discord bot** and **NestJS API** sharing a **Prisma** database
 
 ## Build and run
 
+All build output goes to a single **`dist/`** folder at the repo root:
+
+- **`dist/api/`** – NestJS API
+- **`dist/bot/`** – Discord bot
+
 - **Build everything:** `npm run build`
 - **Run API:** `npm run start:api` (after `npm run build`)
 - **Run bot:** `npm run start:bot` (after `npm run build`)
