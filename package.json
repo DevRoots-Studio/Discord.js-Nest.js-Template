@@ -8,11 +8,11 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "npm run build:db && npm run build:api && npm run build:bot",
+    "build": "npm run build:db && npm run build:api && npm run build:bot && node scripts/postbuild.js",
     "build:db": "npm run build --workspace=@repo/database",
     "build:api": "npm run build --workspace=@repo/api",
     "build:bot": "npm run build --workspace=@repo/discord-bot",
-    "start:api": "npm run start --workspace=@repo/api",
+    "start:api": "node dist/api/main.js",
     "start:bot": "npm run start --workspace=@repo/discord-bot",
     "dev": "npx concurrently -n api,bot -c blue,green \"npm run dev --workspace=@repo/api\" \"npm run dev --workspace=@repo/discord-bot\"",
     "dev:api": "npm run dev --workspace=@repo/api",

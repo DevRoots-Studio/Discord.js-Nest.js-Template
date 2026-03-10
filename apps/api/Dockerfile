@@ -25,6 +25,7 @@ COPY --from=builder /app/packages/database ./packages/database
 COPY package.json package-lock.json* ./
 COPY apps/api/package.json apps/api/
 COPY packages/database/package.json packages/database/
+COPY apps/api/README.docker.md ./README.md
 
 WORKDIR /app
 EXPOSE 3000

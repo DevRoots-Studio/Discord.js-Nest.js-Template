@@ -6,7 +6,7 @@
   "main": "dist/bot/main.js",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/bot/main.js",
+    "start": "node --no-warnings=MODULE_TYPELESS_PACKAGE_JSON ../../dist/bot/main.js",
     "dev": "tsx watch src/main.ts"
   },
   "dependencies": {

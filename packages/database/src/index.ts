@@ -3,3 +3,5 @@ import { PrismaClient } from "@prisma/client";
 export const prisma = new PrismaClient();
 export { PrismaClient };
 export type { User } from "@prisma/client";
+
+export default { prisma, PrismaClient };

@@ -25,6 +25,7 @@ COPY --from=builder /app/packages/database ./packages/database
 COPY package.json package-lock.json* ./
 COPY apps/discord-bot/package.json apps/discord-bot/
 COPY packages/database/package.json packages/database/
+COPY apps/discord-bot/README.docker.md ./README.md
 
 WORKDIR /app
 EXPOSE 3100

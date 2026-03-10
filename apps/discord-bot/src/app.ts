@@ -2,7 +2,8 @@ import { Client, GatewayIntentBits } from "discord.js";
 import { CommandKit } from "commandkit";
 import path from "path";
 import { fileURLToPath } from "url";
-import { prisma } from "@repo/database";
+import db from "@repo/database";
+const prisma = db.prisma;
 import { startBridgeServer } from "./bridge/server.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
