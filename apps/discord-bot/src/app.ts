@@ -32,8 +32,11 @@ export class App {
     }
     this.client.token = this.token;
 
-    const isProd = process.env.NODE_ENV === "production";
-    const baseDir = path.join(__dirname, "..");
+    // When running from dist/bot, __dirname is dist/bot (Commands/Events/Validations live there)
+    const isProd =
+      process.env.NODE_ENV === "production" ||
+      __dirname.includes(`${path.sep}dist${path.sep}`);
+    const baseDir = isProd ? __dirname : path.join(__dirname, "..");
     const commandsPath = path.resolve(
       baseDir,
       isProd ? "Commands" : "src/Commands",
@@ -57,7 +60,7 @@ export class App {
     await this.init();
     void this.client.login(this.token);
 
-    this.client.once("ready", () => {
+    this.client.once("clientReady", () => {
       startBridgeServer(this.client);
     });
   }
